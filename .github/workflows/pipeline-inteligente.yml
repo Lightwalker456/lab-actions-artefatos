@@ -41,6 +41,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: meus-relatorios-oficiais
+          path: saida_build/
 
       - name: Exibir Conteúdo
-        run: cat saida_build/relatorio1.txt
+        run: cat relatorio1.txt
