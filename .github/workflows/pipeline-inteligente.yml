@@ -44,4 +44,4 @@ jobs:
           path: saida_build/
 
       - name: Exibir Conteúdo
-        run: cat relatorio1.txt
+        run: cat saida_build/relatorio1.txt
