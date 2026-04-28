@@ -25,8 +25,8 @@ jobs:
         with:
           name: meus-relatorios-oficiais
           path: |
-            relatorio1.txt
-            relatorio2.txt
+           relatorio1.txt
+           relatorio2.txt
 
   auditoria:
     name: job_auditoria
@@ -39,5 +39,6 @@ jobs:
           name: meus-relatorios-oficiais
 
       - name: Exibir Conteúdo
-        run: cat saida_build/
-             cat relatorio1.txt
+        run: |
+          cat relatorio1.txt
+          cat relatorio2.txt
