@@ -17,16 +17,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Criar Relatórios Oficiais
-        run: echo "Sucesso! Artefato gerado em $(date)" > relatorio1.txt
-             echo "Sucesso! Artefato gerado em $(date)" > relatorio2.txt
+        run: |
+          mkdir -p saida_build
+          echo "Sucesso! Artefato gerado em $(date)" > saida_build/relatorio1.txt
+          echo "Sucesso! Artefato gerado em $(date)" > saida_build/relatorio2.txt
 
       - name: Salvar Artefatos
         uses: actions/upload-artifact@v4
         with:
           name: meus-relatorios-oficiais
-          path: |
-           relatorio1.txt
-           relatorio2.txt
+          path: saida_build/
 
   auditoria:
     name: job_auditoria
@@ -39,6 +39,4 @@ jobs:
           name: meus-relatorios-oficiais
 
       - name: Exibir Conteúdo
-        run: |
-          cat relatorio1.txt
-          cat relatorio2.txt
+        run: cat relatorio1.txt
