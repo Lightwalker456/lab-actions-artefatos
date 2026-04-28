@@ -24,7 +24,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: meus-relatorios-oficiais
-          path: saida_build/
+          path: |
+            relatorio1.txt
+            relatorio2.txt
 
   auditoria:
     name: job_auditoria
